@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('measurements', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('sensor_id')->constrained('sensors');
             $table->double('irrigation');
             $table->double('acidity');
