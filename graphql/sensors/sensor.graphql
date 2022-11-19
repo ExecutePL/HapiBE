@@ -1,0 +1,27 @@
+extend type Query {
+    sensors(orderBy: _ @orderBy(columns: ["created_at", "status"])): [Sensor!]! @paginate
+    sensor(serial_number: String! @eq): Sensor @find
+}
+
+extend type Mutation {
+    createSensor(input: CreateSensorInput! @spread): Sensor!
+    deleteSensor(id: ID!): Sensor! @delete
+}
+
+input CreateSensorInput
+input BelongsToSensor
+input HasManySensors
+
+type Sensor {
+    id: ID!
+    name: String!
+    serial_number: String!
+    latitude: Float!
+    longitude: Float!
+    batteryLevel: Int!
+    status: Boolean
+    measures: [Measurement!] @hasMany
+}
+
+#import sensor.input.graphql
+
