@@ -24,6 +24,6 @@ Route::post('/update/sensor', function (Request $request) {
     $b = array();
     foreach(str_split($a) as $c)
         $b[] = sprintf("%08b", ord($c));
-    print_r([$data['uuid'],$b]);
+    print_r([$data['uuid'],bindec($b[0])]);
     die();
 });
