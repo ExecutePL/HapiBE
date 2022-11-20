@@ -19,7 +19,7 @@ type Sensor {
     latitude: Float!
     longitude: Float!
     batteryLevel: Int!
-    status: Boolean
+    status: String
     measures: [Measurement!] @hasMany
 }
 
