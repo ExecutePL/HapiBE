@@ -1,5 +1,10 @@
 extend type Query {
-    sensors: [Sensor!]! @all
+    sensors(orderBy: _ @orderBy(columns: ["created_at", "status"])): [Sensor!]! @paginate
+    sensor(serial_number: String! @eq): Sensor @find
+}
+
+extend type Mutation {
+    deleteSensor(id: ID!): Sensor! @delete
 }
 
 type Sensor {
