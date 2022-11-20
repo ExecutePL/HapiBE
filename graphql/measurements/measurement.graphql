@@ -20,6 +20,7 @@ type Measurement {
     phosphorus: Float
     potassium: Float
     magnesium: Float
+    temperature: Float
     sensor: Sensor! @belongsTo
 }
 

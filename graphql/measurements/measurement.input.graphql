@@ -5,6 +5,7 @@ extend input CreateMeasurementInput {
     phosphorus: Float
     potassium: Float
     magnesium: Float
+    temperature: Float
 }
 
 extend input UpdateMeasurementInput {

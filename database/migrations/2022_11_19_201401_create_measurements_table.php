@@ -22,6 +22,7 @@ return new class extends Migration
             $table->double('phosphorus')->nullable();
             $table->double('potassium')->nullable();
             $table->double('magnesium')->nullable();
+            $table->double('temperature')->nullable();
             $table->timestamps();
         });
     }
