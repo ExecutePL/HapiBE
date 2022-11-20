@@ -7,6 +7,8 @@ extend type Mutation {
     deleteSensor(id: ID!): Sensor! @delete
 }
 
+input CreateSensorInput
+
 type Sensor {
     id: ID!
     name: String!
@@ -17,4 +19,5 @@ type Sensor {
     status: String
 }
 
+#import sensor.input.graphql
 
