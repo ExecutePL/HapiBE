@@ -1,5 +1,5 @@
 extend type Query {
-    sensors(orderBy: _ @orderBy(columns: ["created_at", "status"])): [Sensor!]! @paginate
+    sensors(orderBy: _ @orderBy(columns: ["created_at"])): [Sensor!]! @paginate
     sensor(serial_number: String! @eq): Sensor @find
 }
 
