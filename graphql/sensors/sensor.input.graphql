@@ -8,7 +8,7 @@ extend input CreateSensorInput {
 }
 
 extend input BelongsToSensor {
-    connect: ID
+    connect: String
 }
 
 extend input HasManySensors {
