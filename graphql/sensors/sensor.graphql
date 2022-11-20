@@ -4,7 +4,7 @@ extend type Query {
 }
 
 extend type Mutation {
-    createSensor(input: CreateSensorInput! @spread): Sensor! @create
+    createSensor(input: CreateSensorInput! @spread): Sensor!
     deleteSensor(id: ID!): Sensor! @delete
 }
 
