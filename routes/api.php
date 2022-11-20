@@ -24,9 +24,7 @@ Route::post('/update/sensor', function (Request $request) {
     $b = array();
     foreach(str_split($a) as $c)
         $b[] = sprintf("%08b", ord($c));
-    print_r($data);
-    die();
-    $sensor = \App\Models\Sensor::where('serial_number',$data['uuid'])->first();
+    $sensor = \App\Models\Sensor::where('serial_number',$data['dev_eui'])->first();
     $new_measurement = new \App\Models\Measurement();
     if($new_measurement){
         $new_measurement->sensor_id = $sensor->id;
