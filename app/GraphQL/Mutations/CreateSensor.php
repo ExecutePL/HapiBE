@@ -3,6 +3,7 @@
 namespace App\GraphQL\Mutations;
 
 use App\Models\Sensor;
+use GraphQL\Error\Error;
 
 final class CreateSensor
 {
@@ -32,6 +33,9 @@ final class CreateSensor
         if($too_close === false){
             $new_sensor = new Sensor($args);
             $new_sensor->save();
+            return $new_sensor;
+        }else{
+            return Error::createLocatedError('New sensor is too close to other sensor');
         }
     }
 }

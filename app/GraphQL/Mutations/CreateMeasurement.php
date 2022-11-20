@@ -22,7 +22,7 @@ final class CreateMeasurement
             $new_measurement->save();
             return $new_measurement;
         }else{
-            return Error::createLocatedError('User is not verified');
+            return Error::createLocatedError('Sensor does not exist');
         }
     }
 }
