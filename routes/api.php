@@ -31,7 +31,7 @@ Route::post('/update/sensor', function (Request $request) {
         $new_measurement->irrigation = bindec($b[0]);
         $new_measurement->acidity = bindec($b[1]);
         $new_measurement->irradiation = bindec($b[2]);
-        $new_measurement->phosphorus = bindec($b[3]);
+        $new_measurement->temperature = bindec($b[3]);
         $new_measurement->save();
         return response('Hello World', 200)->header('Content-Type', 'text/plain');
     }
