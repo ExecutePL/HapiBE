@@ -1,11 +1,10 @@
 extend type Query {
-    sensors(orderBy: _ @orderBy(columns: ["created_at"])): [Sensor!]! @all
+    sensors: [Sensor!]! @all
     sensor(serial_number: String! @eq): Sensor @find
 }
 
 extend type Mutation {
     createSensor(input: CreateSensorInput! @spread): Sensor!
-    deleteSensor(id: ID!): Sensor! @delete
 }
 
 input CreateSensorInput
