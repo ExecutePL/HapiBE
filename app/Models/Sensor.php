@@ -24,6 +24,11 @@ class Sensor extends Model
         'status'
     ];
 
+    public function getStatusAttribute($value)
+    {
+        return $this->statuses[$value];
+    }
+
     public function measures(): HasMany
     {
         return $this->hasMany(Measurement::class, 'sensor_id', 'id');
