@@ -20,7 +20,7 @@ type Measurement {
     phosphorus: Float!
     potassium: Float!
     magnesium: Float!
-    sensor: [Sensor!] @belongsTo
+    sensor: Sensor! @belongsTo
 }
 
 #import measurement.input.graphql
