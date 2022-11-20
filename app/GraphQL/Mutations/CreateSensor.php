@@ -32,6 +32,7 @@ final class CreateSensor
         }
         if($too_close === false){
             $args['status'] = true;
+            $args['batteryLevel'] = 100;
             $new_sensor = new Sensor($args);
             $new_sensor->save();
             return $new_sensor;
