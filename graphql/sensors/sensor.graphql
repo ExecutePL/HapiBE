@@ -20,6 +20,8 @@ type Sensor {
     longitude: Float!
     batteryLevel: Int
     status: String
+    created_at: DateTime!
+    updated_at: DateTime!
     measures: [Measurement!] @hasMany
 }
 

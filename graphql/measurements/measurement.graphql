@@ -21,6 +21,8 @@ type Measurement {
     potassium: Float
     magnesium: Float
     temperature: Float
+    created_at: DateTime!
+    updated_at: DateTime!
     sensor: Sensor! @belongsTo
 }
 
