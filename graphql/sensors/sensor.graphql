@@ -4,8 +4,13 @@ extend type Query {
 }
 
 extend type Mutation {
+    createSensor(input: CreateSensorInput! @spread): Sensor!
     deleteSensor(id: ID!): Sensor! @delete
 }
+
+input CreateSensorInput
+input BelongsToSensor
+input HasManySensors
 
 type Sensor {
     id: ID!
@@ -16,4 +21,6 @@ type Sensor {
     batteryLevel: Int!
     status: String
 }
+
+#import sensor.input.graphql
 
