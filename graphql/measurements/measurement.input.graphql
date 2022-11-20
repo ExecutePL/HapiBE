@@ -1,10 +1,10 @@
 extend input CreateMeasurementInput {
-    irrigation: Float!
-    acidity: Float!
-    irradiation: Float!
-    phosphorus: Float!
-    potassium: Float!
-    magnesium: Float!
+    irrigation: Float
+    acidity: Float
+    irradiation: Float
+    phosphorus: Float
+    potassium: Float
+    magnesium: Float
 }
 
 extend input UpdateMeasurementInput {

@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('measurements', function (Blueprint $table) {
             $table->id();
             $table->foreignId('sensor_id')->constrained('sensors');
-            $table->double('irrigation');
-            $table->double('acidity');
-            $table->double('irradiation');
-            $table->double('phosphorus');
-            $table->double('potassium');
-            $table->double('magnesium');
+            $table->double('irrigation')->nullable();
+            $table->double('acidity')->nullable();
+            $table->double('irradiation')->nullable();
+            $table->double('phosphorus')->nullable();
+            $table->double('potassium')->nullable();
+            $table->double('magnesium')->nullable();
             $table->timestamps();
         });
     }

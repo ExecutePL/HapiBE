@@ -14,12 +14,12 @@ input HasManyMeasurements
 
 type Measurement {
     id: ID!
-    irrigation: Float!
-    acidity: Float!
-    irradiation: Float!
-    phosphorus: Float!
-    potassium: Float!
-    magnesium: Float!
+    irrigation: Float
+    acidity: Float
+    irradiation: Float
+    phosphorus: Float
+    potassium: Float
+    magnesium: Float
     sensor: Sensor! @belongsTo
 }
 
