@@ -11,8 +11,8 @@ class Sensor extends Model
     use HasFactory;
 
     protected $statuses = array(
-        '0' => 'offline',
-        '1' => 'online'
+        false => 'offline',
+        true => 'online'
     );
 
     protected $fillable = [
