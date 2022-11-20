@@ -31,6 +31,7 @@ final class CreateSensor
             }
         }
         if($too_close === false){
+            $args['status'] = true;
             $new_sensor = new Sensor($args);
             $new_sensor->save();
             return $new_sensor;
