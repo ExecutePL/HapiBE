@@ -6,3 +6,13 @@ extend input CreateSensorInput {
     batteryLevel: Int
     status: Boolean
 }
+
+extend input BelongsToSensor {
+    connect: ID
+}
+
+extend input HasManySensors {
+    connect: [ID!]
+    create: [CreateSensorInput!]
+    delete: [ID!]
+}

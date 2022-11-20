@@ -1,0 +1,20 @@
+extend input CreateMeasurementInput {
+    irrigation: Float!
+    acidity: Float!
+    irradiation: Float!
+    phosphorus: Float!
+    potassium: Float!
+    magnesium: Float!
+    sensor: BelongsToSensor!
+}
+
+extend input UpdateMeasurementInput {
+    status: Int
+}
+
+extend input HasManyMeasurements {
+    connect: [ID!]
+    update: [UpdateMeasurementInput!]
+    create: [CreateMeasurementInput!]
+    delete: [ID!]
+}
