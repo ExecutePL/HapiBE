@@ -24,6 +24,12 @@ Route::post('/update/sensor', function (Request $request) {
     $b = array();
     foreach(str_split($a) as $c)
         $b[] = sprintf("%08b", ord($c));
-    print_r([$data['uuid'],bindec($b[0])]);
+    $sensor = \App\Models\Sensor::where('serial_number',$data['uuid'])->first();
+    $new_measurement = new \App\Models\Measurement();
+    if($new_measurement){
+        $new_measurement->sensor_id = $sensor->id;
+        $new_measurement->irrigation = bindec($b[0]);
+        $new_measurement->save();
+    }
     die();
 });
