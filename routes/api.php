@@ -20,6 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/update/sensor', function (Request $request) {
     $data = $request->json()->all();
-    print_r([$data['uuid'],hexdec(base64_decode('RA=='))]);
+    $a = base64_decode($data['payload']);
+    $b = array();
+    foreach(str_split($a) as $c)
+        $b[] = sprintf("%08b", ord($c));
+    print_r([$data['uuid'],$b]);
     die();
 });
